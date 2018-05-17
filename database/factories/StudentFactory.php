@@ -9,7 +9,5 @@ $factory->define(App\Models\Student::class, function (Faker $faker) {
 		'first_name' => $faker->firstName,
 		'last_name'  => $faker->lastName,
 		'sex_id'     => $faker->randomElement($sexes),
-		'dob'        => $faker->dateTimeBetween('-45 years', '-15 years')->format('Y-m-d'),
-		'email'      => $faker->unique()->email,
 	];
 });

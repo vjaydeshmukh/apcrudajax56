@@ -5,8 +5,12 @@
 		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 		<!-- Favicons -->
-		<link rel="apple-touch-icon" href="../assets/img/apple-icon.png">
-		<link rel="icon" href="../assets/img/favicon.png">
+		<link rel="apple-touch-icon" href="{{ asset('img/apple-icon.png') }}">
+		<link rel="icon" href="{{ asset('img/favicon.png') }}">
+		
+		<!-- CSRF Token -->
+		<meta name="csrf-token" content="{{ csrf_token() }}">
+		
 		<title>@yield('title', config('app.name'))</title>
 		
 		<!--     Fonts and icons     -->
@@ -27,6 +31,8 @@
 				<div class="content">
 					<div class="container-fluid">
 						<div class="row">
+							@include('flash::message')
+
 							@yield('content')
 						</div>
 					</div>
@@ -52,6 +58,12 @@
 		<script src="{{ asset('js/bootstrap-material-design.min.js?v=2.0.0') }}"></script>
 		<!-- Demo init -->
 		<script src="{{ asset('js/plugins/demo.js') }}"></script>
+
+		<script>
+      $('div.alert').not('.alert-important').delay(3000).slideUp(300);
+      <!-- This is only necessary if you do Flash::overlay('...') -->
+      $('#flash-overlay-modal').modal();
+    </script>
 		
 		@yield('scripts')
 	</body>
