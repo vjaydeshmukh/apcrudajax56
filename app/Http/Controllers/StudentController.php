@@ -24,8 +24,7 @@ class StudentController extends Controller
 																		CONCAT(students.first_name, " ", students.last_name) AS full_name,
 																		students.id')
 												->get();
-		
-		//return response($students);
+
 		return view('ajax.studentList', compact('students'));
 	}
 	
@@ -36,8 +35,6 @@ class StudentController extends Controller
 			$student = Student::create($request->all());
 			
 			return response($this->find($student->id));
-			
-			//return response($request->all());
 		}
 	}
 	
@@ -45,12 +42,33 @@ class StudentController extends Controller
 	{
 		return Student::join('sexes', 'sexes.sex_id', '=', 'students.sex_id')
 									->selectRaw('sexes.gender,
+															students.sex_id,
 															students.first_name,
 															students.last_name,
 															CONCAT(students.first_name, " ", students.last_name) AS full_name,
 															students.id')
 									->where('students.id', $id)
 									->first();
+	}
+	
+	public function edit(Request $request)
+	{
+		if ($request->ajax())
+		{
+			$student = Student::findOrFail($request->id);
+			
+			return response($student);
+		}
+	}
+	
+	public function update(Request $request)
+	{
+		if ($request->ajax())
+		{
+			$student = Student::findOrFail($request->id);
+			$student->update($request->all());
+			return response($this->find($student->id));
+		}
 	}
 	
 	public function destroy(Request $request)

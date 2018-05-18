@@ -24,6 +24,8 @@ Route::prefix('/students')->group(function ()
 	Route::get('/', 'StudentController@index')->name('index');
 	Route::get('/read-data', 'StudentController@readData')->name('readData');
 	Route::post('/store', 'StudentController@store')->name('store');
+	Route::get('/edit', 'StudentController@edit')->name('edit');
+	Route::post('/update', 'StudentController@update')->name('update');
 	Route::post('/destroy', 'StudentController@destroy')->name('destroy');
 });
 

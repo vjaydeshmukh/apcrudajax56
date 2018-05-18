@@ -20,7 +20,7 @@ Tip 2: you can also add an image using data-image tag
 			<li class="nav-item ">
 				<a class="nav-link" href="{{ url('students') }}">
 					<i class="material-icons">person</i>
-					<p>Students - Ajax</p>
+					<p>Students - Ajax-Modal</p>
 				</a>
 			</li>
 			<li class="nav-item ">
