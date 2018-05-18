@@ -27,6 +27,8 @@ Route::prefix('/students')->group(function ()
 	Route::get('/edit', 'StudentController@edit')->name('edit');
 	Route::post('/update', 'StudentController@update')->name('update');
 	Route::post('/destroy', 'StudentController@destroy')->name('destroy');
+	Route::get('/pagination', 'StudentController@pagination');
+	Route::get('/page/ajax', 'StudentController@studentPage');
 });
 
 Route::resource('product', 'ProductAjaxController');

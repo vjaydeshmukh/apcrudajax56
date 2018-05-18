@@ -2,7 +2,7 @@
 
 <?php
 	if ($product->exists):
-		$form_data = ['route' => ['product.update', $product], 'method' => 'PATCH'];
+		$form_data = ['route' => ['product.update', $product], 'method' => 'PATCH', 'id' => 'form-id'];
 		$action = ' Update';
 	else:
 		$form_data = ['route' => ['product.store'], 'method' => 'POST', 'id' => 'form-id'];
@@ -52,7 +52,7 @@
 						 {!! Form::button('   Create', [
 						    'type'  => 'submit',
 						    'class' => 'btn btn-primary fa fa-save',
-						    'id'    => 'btn-form'
+						    'id'    => 'btn-save'
 						    ])
 						 !!}
 						<button type="reset" class="btn btn-warning"><i class="material-icons">refresh</i>Reset</button>

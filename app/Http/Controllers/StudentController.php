@@ -80,4 +80,28 @@ class StudentController extends Controller
 			return response(['message' => 'Student deleted successfully!']);
 		}
 	}
+
+	public function findPage()
+	{
+		return Student::join('sexes', 'sexes.sex_id', '=', 'students.sex_id')
+									->selectRaw('sexes.gender,
+															students.sex_id,
+															students.first_name,
+															students.last_name,
+															CONCAT(students.first_name, " ", students.last_name) AS full_name,
+															students.id')
+									->paginate(2);
+	}
+
+	public function pagination()
+	{
+		$students = $this->findPage();
+		return view('ajax.pagination', compact('students'));
+	}
+
+	public function studentPage()
+	{
+		$students = $this->findPage();
+		return view('ajax.studentPage', compact('students'))->render();
+	}
 }

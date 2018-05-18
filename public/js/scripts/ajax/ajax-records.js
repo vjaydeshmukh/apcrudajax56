@@ -18,7 +18,7 @@ function printSuccessMessage(data) {
 }
 
 function addAndEditUsingAjax() {
-	$('#btn-form').on('click', function (e) {
+	$('#btn-save').on('click', function (e) {
 		e.preventDefault();
 		var formId = '#form-id';    // Form Create
 		
