@@ -19,6 +19,7 @@
 	
 		<!-- Material Dashboard CSS -->
 		<link rel="stylesheet" href="{{ asset('css/material-dashboard.min.css') }}">
+		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
 		@yield('styles')
 	</head>
 	<body class="@yield('body-class')">
@@ -58,6 +59,8 @@
 		<script src="{{ asset('js/bootstrap-material-design.min.js?v=2.0.0') }}"></script>
 		<!-- Demo init -->
 		<script src="{{ asset('js/plugins/demo.js') }}"></script>
+
+		<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>
 
 		<script>
       $('div.alert').not('.alert-important').delay(3000).slideUp(300);

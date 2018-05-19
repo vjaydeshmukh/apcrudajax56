@@ -16,6 +16,6 @@ class DatabaseSeeder extends Seeder
 		    ['gender' => 'Female']
 	    ]);
 	
-	    factory(Student::class, 5)->create();
+	    factory(Student::class, 15)->create();
     }
 }

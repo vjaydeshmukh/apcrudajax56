@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Sex;
 use Illuminate\Database\Eloquent\Model;
 
 class Student extends Model
@@ -13,4 +14,9 @@ class Student extends Model
 	protected $primaryKey = 'id';
 
 	public $timestamps = false;
+
+  public function sex()
+  {
+    return $this->belongsTo(Sex::class, 'id', 'sex_id');
+  }
 }
