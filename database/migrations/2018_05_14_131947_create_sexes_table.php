@@ -9,7 +9,7 @@ class CreateSexesTable extends Migration
     public function up()
     {
         Schema::create('sexes', function (Blueprint $table) {
-            $table->increments('sex_id');
+            $table->increments('id');
             $table->string('gender');
         });
     }

@@ -30,6 +30,8 @@ Route::prefix('/students')->group(function ()
 	Route::get('/pagination', 'StudentController@pagination');
 	Route::get('/page/ajax', 'StudentController@studentPage');
 	Route::get('/datatable', 'DatatableController@index')->name('datatable');
+	Route::get('/insert-student-validation', 'ValidationController@insertStudentValidation');
+	Route::post('/insert-student-validation', 'ValidationController@storeData')->name('storeData');
 });
 
 Route::resource('product', 'ProductAjaxController');

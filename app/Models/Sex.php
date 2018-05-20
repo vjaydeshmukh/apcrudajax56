@@ -7,8 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Sex extends Model
 {
-  public function students()
-  {
-    return $this->hasMany(Student::class, 'id', 'sex_id');
-  }
+	protected $table = 'sexes';
+
+	protected $fillable = ['gender'];
+
+	protected $primaryKey = 'id';
+
+	public $timestamps = false;
 }

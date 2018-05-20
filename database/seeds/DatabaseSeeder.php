@@ -1,6 +1,7 @@
 <?php
-	
-	use App\Models\Student;
+
+use App\Models\Product;
+use App\Models\Student;
 	use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -15,7 +16,8 @@ class DatabaseSeeder extends Seeder
 		    ['gender' => 'Male'],
 		    ['gender' => 'Female']
 	    ]);
-	
+
 	    factory(Student::class, 15)->create();
+	    factory(Product::class, 10)->create();
     }
 }

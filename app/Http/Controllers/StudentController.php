@@ -10,19 +10,20 @@ class StudentController extends Controller
 {
 	public function index()
 	{
-		$sexes = Sex::pluck('gender', 'sex_id');
+		$sexes = Sex::pluck('gender', 'id');
 		
 		return view('ajax.index', compact('sexes'));
 	}
 	
 	public function readData()
 	{
-		$students = Student::join('sexes', 'sexes.sex_id', '=', 'students.sex_id')
+		$students = Student::join('sexes', 'sexes.id', '=', 'students.sex_id')
 												->selectRaw('sexes.gender,
 																		students.first_name,
 																		students.last_name,
 																		CONCAT(students.first_name, " ", students.last_name) AS full_name,
 																		students.id')
+												->orderBy('first_name')
 												->get();
 
 		return view('ajax.studentList', compact('students'));
@@ -40,7 +41,7 @@ class StudentController extends Controller
 	
 	public function find($id)
 	{
-		return Student::join('sexes', 'sexes.sex_id', '=', 'students.sex_id')
+		return Student::join('sexes', 'sexes.id', '=', 'students.sex_id')
 									->selectRaw('sexes.gender,
 															students.sex_id,
 															students.first_name,
@@ -83,14 +84,14 @@ class StudentController extends Controller
 
 	public function findPage()
 	{
-		return Student::join('sexes', 'sexes.sex_id', '=', 'students.sex_id')
+		return Student::join('sexes', 'sexes.id', '=', 'students.sex_id')
 									->selectRaw('sexes.gender,
 															students.sex_id,
 															students.first_name,
 															students.last_name,
 															CONCAT(students.first_name, " ", students.last_name) AS full_name,
 															students.id')
-									->paginate(2);
+									->paginate(3);
 	}
 
 	public function pagination()

@@ -14,8 +14,10 @@ class CreateStudentsTable extends Migration
 			$table->string('last_name', 20);
 
 			$table->unsignedInteger('sex_id');
-			$table->foreign('sex_id')->references('sex_id')->on('sexes');
-			//$table->timestamps();
+			$table->foreign('sex_id')->references('id')->on('sexes')
+              ->onDelete('restrict')
+              ->onUpdate('restrict');
+			$table->timestamps();
 		});
 	}
 
