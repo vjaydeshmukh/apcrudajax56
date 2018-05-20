@@ -29,7 +29,7 @@ Route::prefix('/students')->group(function ()
 	Route::post('/destroy', 'StudentController@destroy')->name('destroy');
 	Route::get('/pagination', 'StudentController@pagination');
 	Route::get('/page/ajax', 'StudentController@studentPage');
-	Route::get('/datatable', 'DatatableController@index');
+	Route::get('/datatable', 'DatatableController@index')->name('datatable');
 });
 
 Route::resource('product', 'ProductAjaxController');

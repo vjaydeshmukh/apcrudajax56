@@ -72,8 +72,8 @@ $('#btn-save').on('click', function (e) {
 		dataTy: 'JSON',
 		success:  function (data) {
 			var product = '<tr id="product' + data.id + '"><td>' + data.id + '</td><td>' + data.brand_name + '</td><td>' + data.model_name + '</td><td>' + data.price + '</td><td>' + data.description + '</td>';
-			product += '<td><button class="btn btn-warning btn-detail open_modal" value="' + data.id + '"><i class="fa fa-edit"></i></button>';
-			product += '<button class="btn btn-danger btn-delete delete-product" value="' + data.id + '"><i class="fa fa-trash"></i></button></td></tr>';
+			product += '<td><button class="btn btn-warning btn-link open_modal" value="' + data.id + '"><i class="fa fa-edit"></i></button>';
+			product += '<button class="btn btn-danger btn-link btn-delete delete-product" value="' + data.id + '"><i class="fa fa-trash"></i></button></td></tr>';
 			if (state === "add")      // If user added a new record
 			{
 				$('#products-list').append(product);

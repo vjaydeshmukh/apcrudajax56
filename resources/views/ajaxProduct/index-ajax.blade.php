@@ -30,10 +30,10 @@
 									<td>{{ $product->price }}</td>
 									<td>{{ str_limit($product->description, $limit = 65, $end = '...') }}</td>
 									<td>
-										<button class="btn btn-warning btn-detail btn-sm open_modal" value="{{ $product->id }}">
+										<button class="btn btn-warning btn-link btn-sm open_modal" value="{{ $product->id }}">
 											<i class="fa fa-edit"></i>
 										</button>
-										<button class="btn btn-danger btn-delete btn-sm delete-product" value="{{ $product->id }}">
+										<button class="btn btn-danger btn-link btn-delete btn-sm delete-product" value="{{ $product->id }}">
 											<i class="material-icons">delete</i>
 										</button>
 									</td>
@@ -85,9 +85,9 @@
 					</form>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-primary" id="btn-save" value="add">Save changes</button>
+					<button type="button" class="btn btn-primary btn-link" id="btn-save" value="add">Save changes</button>
 					<input type="hidden" id="product_id" name="product_id" value="0">
-					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-secondary btn-link" data-dismiss="modal">Close</button>
 				</div>
 			</div>
 		</div>

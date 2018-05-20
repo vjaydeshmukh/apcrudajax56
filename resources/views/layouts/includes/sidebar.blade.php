@@ -30,6 +30,12 @@ Tip 2: you can also add an image using data-image tag
 				</a>
 			</li>
 			<li class="nav-item ">
+				<a class="nav-link" href="{{ route('datatable') }}">
+					<i class="material-icons">person</i>
+					<p>Students - DataTables</p>
+				</a>
+			</li>
+			<li class="nav-item ">
 				<a class="nav-link" href="{{ url('ajaxCRUD') }}">
 					<i class="material-icons">content_paste</i>
 					<p>Products - Ajax-Route</p>

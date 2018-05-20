@@ -33,8 +33,8 @@
 									<td>{{ $product->price }}</td>
 									<td>{{ str_limit($product->description, $limit = 65, $end = '...') }}</td>
 									<td>
-										<button class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></button>
-										<button class="btn btn-danger btn-sm"><i class="material-icons">delete</i></button>
+										<button class="btn btn-warning btn-link btn-sm"><i class="fa fa-edit"></i></button>
+										<button class="btn btn-danger btn-link btn-sm"><i class="material-icons">delete</i></button>
 									</td>
 								</tr>
 							@endforeach
