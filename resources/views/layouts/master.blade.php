@@ -21,6 +21,9 @@
 		<!-- DataTables -->
 		<link rel="stylesheet" href="{{ asset('css/dataTables/jquery.dataTables.min.css') }}">
 		<link rel="stylesheet" href="{{ asset('css/dataTables/buttons.dataTables.min.css') }}">
+		<!-- jQuery UI -->
+		<link rel="stylesheet" href="{{ asset('jQueryui/jquery-ui.theme.min.css') }}">
+
 		@yield('styles')
 	</head>
 	<body class="@yield('body-class')">
@@ -69,6 +72,8 @@
 		<script src="{{ asset('js/dataTables/vfs_fonts.js') }}"></script>
 		<script src="{{ asset('js/dataTables/buttons.html5.min.js') }}"></script>
 		<script src="{{ asset('js/dataTables/buttons.print.min.js') }}"></script>
+		<!-- jQuery UI -->
+		<script src="{{ asset('jQueryui/jquery-ui.min.js') }}"></script>
 
 		<script>
       $('div.alert').not('.alert-important').delay(3000).slideUp(300);

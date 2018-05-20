@@ -32,6 +32,11 @@ Route::prefix('/students')->group(function ()
 	Route::get('/datatable', 'DatatableController@index')->name('datatable');
 	Route::get('/insert-student-validation', 'ValidationController@insertStudentValidation');
 	Route::post('/insert-student-validation', 'ValidationController@storeData')->name('storeData');
+	Route::get('/autocomplete', function () {
+		return view('autocomplete.index');
+	});
+	Route::get('/autocomplete', 'AutocompleteController@index')->name('autocomplete');
+	Route::get('/autocomplete-search', 'AutocompleteController@search')->name('search');
 });
 
 Route::resource('product', 'ProductAjaxController');
