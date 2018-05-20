@@ -8,7 +8,13 @@
 				<h4 class="card-title ">Autocomplete With jQuery UI</h4>
 			</div>
 			<div class="card-body">
-				<input type="text" name="search" class="form-control" id="search" placeholder="Search...">
+				<div class="input-group no-border col-md-8">
+					<input type="text" name="search" class="form-control" id="search" placeholder="Search...">
+					<button type="submit" class="btn btn-white btn-round btn-just-icon">
+						<i class="material-icons">search</i>
+						<div class="ripple-container"></div>
+					</button>
+				</div>
 
 				{!! Form::open(['route' => ['storeData'], 'method' => 'POST']) !!}
 					@csrf
@@ -36,6 +42,12 @@
 										<option value="{{ $sex->id }}">{{ $sex->gender }}</option>
 									@endforeach
 								</select>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="dob" class="bmd-label-floating">Birth Date</label>
+								<input type="text" class="form-control" name="dob" id="dob">
 							</div>
 						</div>
 					</div>
@@ -72,12 +84,13 @@
 				console.log(value);
 				//alert(value.item.value);
 				//alert(value.item.label);
-				console.log(value.item.first_name);
+				//console.log(value.item.first_name);
 
 				$('#first_name').val(value.item.first_name);
 				$('#last_name').val(value.item.last_name);
 				$('#sex_id').val(value.item.sex_id);
 			}
 		});
+		$("#dob").datepicker();
 	</script>
 @endsection

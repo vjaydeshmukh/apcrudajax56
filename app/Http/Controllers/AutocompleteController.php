@@ -19,10 +19,11 @@ class AutocompleteController extends Controller
 		$search = $request->term;
 		$students = Student::where('first_name', 'LIKE', '%'.$search.'%')
 												->orWhere('last_name', 'LIKE', '%'.$search.'%')
-												->selectRaw('id, CONCAT(first_name, " ", last_name) AS full_name,
+												->selectRaw('id,
+												      CONCAT(first_name, " ", last_name) as value,
 															first_name, last_name, sex_id')
 												->get();
-		$data = [];
+/*		$data = [];
 
 		foreach ($students as $key => $value)
 		{
@@ -33,8 +34,11 @@ class AutocompleteController extends Controller
 					'last_name'  => $value->last_name,
 					'sex_id'     => $value->sex_id
 			];
-		}
 
 		return response($data);
+	}*/
+		$students->toArray();
+
+		return response($students);
 	}
 }
