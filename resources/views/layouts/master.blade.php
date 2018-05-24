@@ -16,11 +16,14 @@
 		<!--     Fonts and icons     -->
 		<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
 		<link rel="stylesheet" href="{{ asset('css/fontawesome-all.min.css') }}">
-		<!-- Material Dashboard CSS -->
-		<link rel="stylesheet" href="{{ asset('css/material-dashboard.min.css') }}">
 		<!-- DataTables -->
 		<link rel="stylesheet" href="{{ asset('css/dataTables/jquery.dataTables.min.css') }}">
 		<link rel="stylesheet" href="{{ asset('css/dataTables/buttons.dataTables.min.css') }}">
+		<!-- DataTables 1.10.16 - Bootstrap 4 styling -->
+		<link rel="stylesheet" href="{{ asset('css/dataTables/dataTables.bootstrap4.min.css') }}">
+		<link rel="stylesheet" href="{{ asset('css/dataTables/responsive.bootstrap4.min.css') }}">
+		<!-- Material Dashboard CSS -->
+		<link rel="stylesheet" href="{{ asset('css/material-dashboard.min.css') }}">
 		<!-- jQuery UI -->
 		<link rel="stylesheet" href="{{ asset('jQueryui/jquery-ui.theme.min.css') }}">
 
@@ -51,6 +54,20 @@
 		<script src="{{ asset('js/core/jquery.min.js') }}"></script>
 		<script src="{{ asset('js/core/popper.min.js') }}"></script>
 		<script src="{{ asset('js/bootstrap-material-design.min.js') }}"></script>
+		<!-- DataTables 1.10.16 -->
+		<script src="{{ asset('js/dataTables/jquery.dataTables.min.js') }}"></script>
+		<!-- DataTables 1.10.16 - Bootstrap 4 styling -->
+		<script src="{{ asset('js/dataTables/dataTables.bootstrap4.min.js') }}"></script>
+		<script src="{{ asset('js/dataTables/dataTables.responsive.min.js') }}"></script>
+		<script src="{{ asset('js/dataTables/responsive.bootstrap4.min.js') }}"></script>
+
+		<script src="{{ asset('js/dataTables/dataTables.buttons.min.js') }}"></script>
+		<script src="{{ asset('js/dataTables/buttons.flash.min.js') }}"></script>
+		<script src="{{ asset('js/dataTables/jszip.min.js') }}"></script>
+		<script src="{{ asset('js/dataTables/pdfmake.min.js') }}"></script>
+		<script src="{{ asset('js/dataTables/vfs_fonts.js') }}"></script>
+		<script src="{{ asset('js/dataTables/buttons.html5.min.js') }}"></script>
+		<script src="{{ asset('js/dataTables/buttons.print.min.js') }}"></script>
 		<!-- Material Dashboard Core initialisations of plugins and Bootstrap Material Design Library -->
 		<script src="{{ asset('js/plugins/perfect-scrollbar.jquery.min.js') }}"></script>
 		<!-- Charts Plugin, full documentation here: https://gionkunz.github.io/chartist-js/ -->
@@ -63,22 +80,17 @@
 		<script src="{{ asset('js/bootstrap-material-design.min.js?v=2.0.0') }}"></script>
 		<!-- Demo init -->
 		<script src="{{ asset('js/plugins/demo.js') }}"></script>
-		<!-- DataTables -->
-		<script src="{{ asset('js/dataTables/jquery.dataTables.min.js') }}"></script>
-		<script src="{{ asset('js/dataTables/dataTables.buttons.min.js') }}"></script>
-		<script src="{{ asset('js/dataTables/buttons.flash.min.js') }}"></script>
-		<script src="{{ asset('js/dataTables/jszip.min.js') }}"></script>
-		<script src="{{ asset('js/dataTables/pdfmake.min.js') }}"></script>
-		<script src="{{ asset('js/dataTables/vfs_fonts.js') }}"></script>
-		<script src="{{ asset('js/dataTables/buttons.html5.min.js') }}"></script>
-		<script src="{{ asset('js/dataTables/buttons.print.min.js') }}"></script>
 		<!-- jQuery UI -->
 		<script src="{{ asset('jQueryui/jquery-ui.min.js') }}"></script>
 
-		<script>
+		<script type="text/javascript">
       $('div.alert').not('.alert-important').delay(3000).slideUp(300);
       <!-- This is only necessary if you do Flash::overlay('...') -->
       $('#flash-overlay-modal').modal();
+
+      $(document).ready(function () {
+	      $('#indexRecords').DataTable();
+      });
     </script>
 		
 		@yield('scripts')

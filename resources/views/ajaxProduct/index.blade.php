@@ -12,8 +12,7 @@
 				<div class="successMessages"></div>
 			</div>
 			<div class="card-body">
-				<div class="table-responsive">
-					<table class="table">
+					<table id="indexRecords"  class="table table-striped table-bordered dt-responsive nowrap" style="width:100%">
 						<thead class=" text-primary">
 						<tr>
 							<th>ID</th>
@@ -40,7 +39,6 @@
 							@endforeach
 						</tbody>
 					</table>
-				</div>
 			</div>
 		</div>
 	</div>
