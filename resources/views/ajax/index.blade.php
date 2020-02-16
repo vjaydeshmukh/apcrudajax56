@@ -75,7 +75,9 @@
 					})).append($("<td/>", {
 						text : data.gender
 					})).append($("<td/>", {
-						html : '<a href="#" rel="tooltip" title="View" class="btn btn-info btn-link btn-xs" id="view" data-id="'+ data.id +'" target="_blank"><i class="fa fa-info"></i></a>' + '<a href="#" rel="tooltip" title="Edit" class="btn btn-success btn-link btn-xs" id="edit" data-id="' + data.id + '"><i class="fa fa-edit"></i></a>' + '<button type="submit" rel="tooltip" title="Del" class="btn btn-danger btn-link btn-xs" id="del" data-id="\' + data.id + \'"><i class="fa fa-times"></i></button>'
+						html : '<a href="#" rel="tooltip" title="View" class="btn btn-info btn-link btn-xs" id="view" data-id="'+ data.id +'" target="_blank"><i class="fa fa-info"></i></a>' 
+							+ '<a href="#" rel="tooltip" title="Edit" class="btn btn-success btn-link btn-xs" id="edit" data-id="' + data.id + '"><i class="fa fa-edit"></i></a>' 
+							+ '<button type="submit" rel="tooltip" title="Del" class="btn btn-danger btn-link btn-xs" id="del" data-id="\' + data.id + \'"><i class="fa fa-times"></i></button>'
 					}));
 					$('#student-info').append(tr);
 				}
